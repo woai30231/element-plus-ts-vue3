@@ -41,5 +41,11 @@ export const constantRoutes : AppRouteRecordRaw[] = [
         name:'DatePickerDemo',
         component:()=>import("@/views/DatePickerDemo.vue"),
         meta:{title:'时间选择器'}
+    },
+    {
+        path: '/typescript-exercises',
+        name: 'TypeScriptExercises',
+        component: () => import("@/views/TypeScriptExercises.vue"),
+        meta: { title: 'TypeScript 全面练习' }
     }
 ]
