@@ -41,5 +41,11 @@ export const constantRoutes : AppRouteRecordRaw[] = [
         name:'DatePickerDemo',
         component:()=>import("@/views/DatePickerDemo.vue"),
         meta:{title:'时间选择器'}
+    },
+    {
+        path:'/Tspractice',
+        name:'Tspractice',
+        component:()=>import("@/views/Tspractice.vue"),
+        meta:{title:'ts演示'}
     }
 ]
