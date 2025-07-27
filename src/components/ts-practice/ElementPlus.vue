@@ -3,7 +3,7 @@
         <h1>Element Plus Components</h1>
         <el-input v-model="inputValue" placeholder="Enter something"></el-input>
         <el-button @click="handleClick">Submit</el-button>
-        <el-table :data="users" style="width:100%">
+        <el-table :data="users" style="width:360px;">
             <el-table-column prop="name" label="Name" width="180"></el-table-column>
             <el-table-column prop="email" label="Email" width="180"></el-table-column>
         </el-table>
