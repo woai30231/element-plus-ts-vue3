@@ -12,12 +12,13 @@ interface User{
     name:string;
     age:number
 }
-const props = defineProps({
-    user:{
-        type:Object as PropType<User>,
-        required:true
-    }
-})
+// const props = defineProps({
+//     user:{
+//         type:Object as PropType<User>,
+//         required:true
+//     }
+// })
    
+defineProps<{user:User}>()
 
 </script>
