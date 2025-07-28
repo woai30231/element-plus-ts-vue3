@@ -53,5 +53,12 @@ export const constantRoutes : AppRouteRecordRaw[] = [
         name:'TspracticeTwo',
         component:()=>import("@/views/TspracticeTwo.vue"),
         meta:{title:'ts演示2'}
+    },
+    {
+        path:'/TspracticeThree',
+        name:'TspracticeThree',
+        component:()=>import("@/views/TspracticeThree.vue"),
+        meta:{title:'ts实战演示3'}
     }
+
 ]

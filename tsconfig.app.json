@@ -8,6 +8,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "experimentalDecorators": true,
+    // "verbatimModuleSyntax":true,//type变量导入写法控制
     "emitDecoratorMetadata": true,
     // "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
