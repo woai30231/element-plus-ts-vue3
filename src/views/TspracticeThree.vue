@@ -5,10 +5,15 @@
         <RegisterForm ref="childForm" />
         <el-button @click="handleClick">点击</el-button>
     </el-card>
+
+    <el-card>
+        <UserList />
+    </el-card>
 </div>
 </template>
 <script setup lang="ts">
 import RegisterForm from '@/components/ts-practice3/RegisterForm.vue';
+import UserList from '@/components/ts-practice3/UserList.vue';
 import {ref,onMounted} from 'vue';
 const childForm = ref<InstanceType<typeof RegisterForm> | null>(null);
 const handleClick = ()=>{
