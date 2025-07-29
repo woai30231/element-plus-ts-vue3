@@ -43,28 +43,45 @@ export const constantRoutes : AppRouteRecordRaw[] = [
         meta:{title:'时间选择器'}
     },
     {
-        path:'/Tspractice',
-        name:'Tspractice',
-        component:()=>import("@/views/Tspractice.vue"),
-        meta:{title:'ts演示'}
+        path:'/HooksDemo',
+        name:'HooksDemo',
+        component:()=>import("@/views/HooksDemo.vue"),
+        meta:{title:'vue hooks'}
     },
     {
-        path:'/TspracticeTwo',
-        name:'TspracticeTwo',
-        component:()=>import("@/views/TspracticeTwo.vue"),
-        meta:{title:'ts演示2'}
+        path:'/tsdemo',
+        name:'tsdemo',
+        component:()=>import('@/views/tspractice/Index.vue'),
+        redirect:'/tsdemo/TspracticeOne',
+        meta:{title:'tsdemo'},
+        children:[
+            {
+                path:'TspracticeOne',
+                name:'TspracticeOne',
+                component:()=>import("@/views/tspractice/TspracticeOne.vue"),
+                meta:{title:'ts演示'}
+            },
+            {
+                path:'TspracticeTwo',
+                name:'TspracticeTwo',
+                component:()=>import("@/views/tspractice/TspracticeTwo.vue"),
+                meta:{title:'ts演示2'}
+            },
+            {
+                path:'TspracticeThree',
+                name:'TspracticeThree',
+                component:()=>import("@/views/tspractice/TspracticeThree.vue"),
+                meta:{title:'ts实战演示3'}
+            },
+            {
+                path:'TspracticeFore',
+                name:'TspracticeFore',
+                component:()=>import("@/views/tspractice/TspracticeFore.vue"),
+                meta:{title:'ts实战演示4'}
+            }
+        ]
     },
-    {
-        path:'/TspracticeThree',
-        name:'TspracticeThree',
-        component:()=>import("@/views/TspracticeThree.vue"),
-        meta:{title:'ts实战演示3'}
-    },
-    {
-        path:'/TspracticeFore/:id',
-        name:'TspracticeFore',
-        component:()=>import("@/views/TspracticeFore.vue"),
-        meta:{title:'ts实战演示4'}
-    }
+    
+    
 
 ]

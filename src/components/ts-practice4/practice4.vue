@@ -14,11 +14,10 @@ interface User {
     name:string;
     age:number
 }
-const route = useRoute();
 const user = ref<User | null>(null);
 onMounted(()=>{
     user.value = {
-        id:parseInt(route.params.id as string),
+        id:2424242,
         name:'张三',
         age:25
     }

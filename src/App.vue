@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import {onMounted,ref} from 'vue';
-import {useRoute,useRouter} from 'vue-router';
+import {ref} from 'vue';
+
 import {constantRoutes} from '@/router/router';
 const rArr = constantRoutes.map((item)=>{
    const {path,name,meta} = item;
    return {name,path,text:meta?.title};
 }) as routeArrType[];
-console.log(typeof rArr);
-const routes = useRoute();
-const router = useRouter();
+console.log(rArr);
+
 interface routeArrType {
    name:string;
    path:string;
@@ -16,10 +15,7 @@ interface routeArrType {
 }
 const navList = ref<routeArrType[]>(rArr );
 
-onMounted(()=>{
-   console.log(routes)
-   console.log(router)
-})
+
 </script>
 
 <template>
