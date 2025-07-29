@@ -16,6 +16,9 @@
         <el-card>
             <Five />
         </el-card>
+        <el-card>
+            <Six />
+        </el-card>
     </div>
 </template>
 <script setup lang="ts">
@@ -24,4 +27,5 @@ import Three from '@/components/hooksOne/Three.vue';
 import Two from "@/components/hooksOne/Two.vue"
 import Four from '@/components/hooksOne/Four.vue'
 import Five from '@/components/hooksOne/Five.vue';
+import Six from '@/components/hooksOne/Six.vue';
 </script>
