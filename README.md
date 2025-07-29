@@ -1,5 +1,13 @@
-# Vue 3 + TypeScript + Vite
+## 项目笔记
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### vue hooks解决的问题
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+1、避免组件逻辑臃肿，抽离逻辑到Hook中，组件更清爽
+
+2、抽离的逻辑可以在多个组件中复用，封装Hook，一次写好，到处使用
+
+3、易于测试，Hooks是纯函数，可以单独测试
+
+4、避免状态管理混乱，Hook可以管理局部状态如（搜索、表单）
+
+5、hook是函数，天然支持复用
