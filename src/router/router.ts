@@ -4,7 +4,7 @@ export const constantRoutes : AppRouteRecordRaw[] = [
         path:'/',
         name:'Home',
         component:()=> import("@/views/Home.vue"),
-        meta:{title:'首页'}
+        meta:{title:'李建枫 - Welcome to you'}
     },
     {
         path:'/element-plus',
@@ -13,37 +13,43 @@ export const constantRoutes : AppRouteRecordRaw[] = [
         meta:{title:'element-plus笔记'},
         children:[
             {
-                path:'/formdemo',
+                path:'formdemo',
                 name:'formdemo',
-                component:()=>import("@/components/element-plus/FormDemo.vue"),
+                component:()=>import("@/components/element-plus/Formdemo.vue"),
                 meta:{title:'表单演示'}
             },
             {
-                path:'/tabledemo',
+                path:'elcom',
+                name:'elcom',
+                component:()=>import("@/components/element-plus/ElCom.vue"),
+                meta:{title:'element-plus'}
+            },
+            {
+                path:'tabledemo',
                 name:'tabledemo',
                 component:()=>import("@/components/element-plus/TableDemo.vue"),
                 meta:{title:'表格演示'}
             },
             {
-                path:'/dialogdemo',
+                path:'dialogdemo',
                 name:'dialogdemo',
                 component:()=>import("@/components/element-plus/Dialogdemo.vue"),
                 meta:{title:'dialog演示'}
             },
             {
-                path:'/selectdemo',
+                path:'selectdemo',
                 name:'selectdemo',
                 component:()=>import("@/components/element-plus/SelectDemo.vue"),
                 meta:{title:'select演示'}
             },//AllElCompnentTest
             {
-                path:'/AllElCompnentTest',
+                path:'AllElCompnentTest',
                 name:'AllElCompnentTest',
                 component:()=>import("@/components/element-plus/AllElCompnentTest.vue"),
                 meta:{title:'所有组件演示'}
             },//DatePickerDemo
             {
-                path:'/DatePickerDemo',
+                path:'DatePickerDemo',
                 name:'DatePickerDemo',
                 component:()=>import("@/components/element-plus/DatePickerDemo.vue"),
                 meta:{title:'时间选择器'}
