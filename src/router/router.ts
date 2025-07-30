@@ -7,46 +7,60 @@ export const constantRoutes : AppRouteRecordRaw[] = [
         meta:{title:'首页'}
     },
     {
-        path:'/formdemo',
-        name:'formdemo',
-        component:()=>import("@/views/FormDemo.vue"),
-        meta:{title:'表单演示'}
-    },
-    {
-        path:'/tabledemo',
-        name:'tabledemo',
-        component:()=>import("@/views/TableDemo.vue"),
-        meta:{title:'表格演示'}
-    },
-    {
-        path:'/dialogdemo',
-        name:'dialogdemo',
-        component:()=>import("@/views/Dialogdemo.vue"),
-        meta:{title:'dialog演示'}
-    },
-    {
-        path:'/selectdemo',
-        name:'selectdemo',
-        component:()=>import("@/views/SelectDemo.vue"),
-        meta:{title:'select演示'}
-    },//AllElCompnentTest
-    {
-        path:'/AllElCompnentTest',
-        name:'AllElCompnentTest',
-        component:()=>import("@/views/AllElCompnentTest.vue"),
-        meta:{title:'所有组件演示'}
-    },//DatePickerDemo
-    {
-        path:'/DatePickerDemo',
-        name:'DatePickerDemo',
-        component:()=>import("@/views/DatePickerDemo.vue"),
-        meta:{title:'时间选择器'}
-    },
+        path:'/element-plus',
+        name:'element-plus',
+        component:()=>import("@/views/Elementplus.vue"),
+        meta:{title:'element-plus笔记'},
+        children:[
+            {
+                path:'/formdemo',
+                name:'formdemo',
+                component:()=>import("@/components/element-plus/FormDemo.vue"),
+                meta:{title:'表单演示'}
+            },
+            {
+                path:'/tabledemo',
+                name:'tabledemo',
+                component:()=>import("@/components/element-plus/TableDemo.vue"),
+                meta:{title:'表格演示'}
+            },
+            {
+                path:'/dialogdemo',
+                name:'dialogdemo',
+                component:()=>import("@/components/element-plus/Dialogdemo.vue"),
+                meta:{title:'dialog演示'}
+            },
+            {
+                path:'/selectdemo',
+                name:'selectdemo',
+                component:()=>import("@/components/element-plus/SelectDemo.vue"),
+                meta:{title:'select演示'}
+            },//AllElCompnentTest
+            {
+                path:'/AllElCompnentTest',
+                name:'AllElCompnentTest',
+                component:()=>import("@/components/element-plus/AllElCompnentTest.vue"),
+                meta:{title:'所有组件演示'}
+            },//DatePickerDemo
+            {
+                path:'/DatePickerDemo',
+                name:'DatePickerDemo',
+                component:()=>import("@/components/element-plus/DatePickerDemo.vue"),
+                meta:{title:'时间选择器'}
+            },
+        ]
+    }, 
     {
         path:'/HooksDemo',
         name:'HooksDemo',
         component:()=>import("@/views/HooksDemo.vue"),
         meta:{title:'vue hooks'}
+    },
+    {
+        path:'/PiniaDemo',
+        name:'PiniaDemo',
+        component:()=>import("@/views/PiniaDemo.vue"),
+        meta:{title:'Pinia 演示'}
     },
     {
         path:'/tsdemo',
