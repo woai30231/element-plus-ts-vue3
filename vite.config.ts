@@ -16,9 +16,13 @@ export default defineConfig({
     port:5166,
     proxy:{
       '/api':{
-        target:'http://127.0.0.1:6666',
+        target:'http://127.0.0.1:6753',
         changeOrigin:true,
         // rewrite:(path)=>path.replace(/^\/api/, '')
+      },
+      "/test":{
+        target:"http://127.0.0.1:6753",
+        changeOrigin:true
       }
     }
   }

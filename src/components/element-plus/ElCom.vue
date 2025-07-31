@@ -134,7 +134,7 @@
 
         <Four />
 
-        <el-space wrap>
+        <el-space wrap direction="horizontal">
             <el-card v-for="i in 3" :key="i" class="box-card" style="width: 250px">
             <template #header>
                 <div class="card-header">
@@ -149,6 +149,35 @@
         </el-space>
 
 
+            <Five />
+
+            <el-card>
+                <Six />
+            </el-card>
+
+            <el-card>
+                <Seven />
+            </el-card>
+
+            <el-card>
+                <Eight />
+            </el-card>
+
+            <el-card>
+                <Nine />
+            </el-card>
+
+            <el-card>
+                <Ten />
+            </el-card>
+            <el-card>
+                <Ten1 />
+            </el-card>
+
+            <el-card>
+                <Ten2 />
+            </el-card>
+
     </div>
 </template>
 <script setup lang="ts">
@@ -156,6 +185,14 @@ import One from '@/components/el-origin/One.vue'
 import Two from '@/components/el-origin/Two.vue';
 import Three from '@/components/el-origin/Three.vue';
 import Four from '@/components/el-origin/Four.vue'
+import Five from '@/components/el-origin/Five.vue'
+import Six from '@/components/el-origin/Six.vue';
+import Seven from '@/components/el-origin/Seven.vue';
+import Eight from  '@/components/el-origin/Eight.vue'
+import Nine from "@/components/el-origin/Nine.vue"
+import Ten from '@/components//el-origin/Ten.vue';
+import Ten1 from '@/components//el-origin/Ten1.vue';
+import Ten2 from '@/components//el-origin/Ten2.vue';
 import {
   Check,
   Delete,
