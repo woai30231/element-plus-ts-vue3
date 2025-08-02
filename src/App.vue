@@ -1,3 +1,21 @@
+<template>
+   <div :class="themeStyle">
+      <div class="mainTop">
+         <div class="topHeader">
+            <el-menu  style="flex:1 1 100%;border-bottom:0px;" mode="horizontal">
+               <el-menu-item v-for="(item,index) in navList" :index="''+index"><router-link :to="{path:item.path}">{{item.text}}</router-link></el-menu-item>
+            </el-menu>
+            <div class="_right">
+               <el-button @click="themeStore.toggleTheme">切换主题</el-button>
+            </div>
+         </div>
+      </div>
+   <div class="mainContainer" >
+      <router-view></router-view>
+   </div>
+   <el-backtop :right="100" :bottom="100" />
+</div>
+</template>
 <script setup lang="ts">
 import {ref,computed,watch} from 'vue';
 import {useThemeStore} from '@/stores/one/themeStore';
@@ -30,32 +48,32 @@ const navList = ref<routeArrType[]>(rArr );
 
 
 </script>
-
-<template>
-   <div :class="themeStyle">
-      <div class="topHeader">
-         <el-menu  style="flex:1 1 100%;" mode="horizontal">
-            <el-menu-item v-for="(item,index) in navList" :index="''+index"><router-link :to="{path:item.path}">{{item.text}}</router-link></el-menu-item>
-         </el-menu>
-         <div class="_right">
-            <el-button @click="themeStore.toggleTheme">切换主题</el-button>
-         </div>
-      </div>
-   <div style="padding-top:30px;">
-      <router-view></router-view>
-   </div>
-
-</div>
-</template>
-
 <style scoped>
+.mainTop{
+   background:#fff;
+   padding:0px;
+   /* --el-border-color:#c00; */
+   border-bottom:1px solid #dcdfe6;
+}
 .topHeader{
+   max-width:1200px;
+   margin:0px auto;
    display:flex;
    align-items:center;
    justify-content:flex-start;
+   background-color:#fff;
+   padding-right:15px;
    ._right{
       flex:120px;
       text-align:right;
    }
+}
+
+.mainContainer{
+   max-width:1200px;
+   margin:0px auto;
+   background-color:#fff;
+   padding:20px 10px;;
+   min-height:500px;
 }
 </style>

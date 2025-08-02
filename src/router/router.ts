@@ -7,6 +7,31 @@ export const constantRoutes : AppRouteRecordRaw[] = [
         meta:{title:'李建枫 - Welcome to you'}
     },
     {
+        path:'/jssection',
+        name:'jssection',
+        component:()=>import("@/views/JsSection.vue"),
+        meta:{title:'js篇'},
+        redirect:'/jssection/virtual-scroll-list',
+        children:[
+            {
+                path:'virtual-scroll-list',
+                name:'VirtualScrollList',
+                meta:{
+                    title:'虚拟滚动列表实现'
+                },
+                component:()=>import("@/components/js-section/virtual-scroll-list.vue")
+            },
+            {
+                path:'tree-data-structure',
+                name:'treeDataStructureShow',
+                meta:{
+                    title:'树形结构数据展示'
+                },
+                component:()=>import("@/components/js-section/tree-data-structure.vue")
+            }
+        ]
+    },
+    {
         path:'/element-plus',
         name:'element-plus',
         component:()=>import("@/views/Elementplus.vue"),
