@@ -1,6 +1,7 @@
 <template>
     <div>
         <h3>该页面展示所有element-plus组件使用记录，<strong>注：全部无数据逻辑</strong></h3>
+        
         <el-row>
             <el-button  >按钮</el-button>
             <el-button disabled type="primary">按钮</el-button>
@@ -68,6 +69,10 @@
             <el-button type="primary" loading>loading</el-button>
             <el-button type="success" loading>loading</el-button>
         </el-row>
+
+        <div>
+                <Ten4 />
+            </div>
 
         <One />
 
@@ -178,6 +183,11 @@
                 <Ten2 />
             </el-card>
 
+            <div>
+                <Ten3 />
+            </div>
+           
+
     </div>
 </template>
 <script setup lang="ts">
@@ -193,6 +203,8 @@ import Nine from "@/components/el-origin/Nine.vue"
 import Ten from '@/components//el-origin/Ten.vue';
 import Ten1 from '@/components//el-origin/Ten1.vue';
 import Ten2 from '@/components//el-origin/Ten2.vue';
+import Ten3 from '@/components//el-origin/Ten3.vue';
+import Ten4 from '@/components//el-origin/Ten4.vue';
 import {
   Check,
   Delete,
