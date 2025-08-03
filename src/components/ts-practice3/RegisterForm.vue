@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import {ref,reactive,defineExpose} from 'vue';
 import request from '@/utils/request';
-import {  type RegisterForm } from '@/types/ts-practice1/type1';
+import type {  RegisterForm } from '@/types/ts-practice1/type1.d.ts';
 const rules  = {
     username :[
         {required:true,message:'Please input your username',trigger:'blur'},

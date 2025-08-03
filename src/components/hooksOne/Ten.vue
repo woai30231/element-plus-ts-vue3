@@ -6,7 +6,7 @@ interface User{
     name:string;
     email:string;
 }
-const {data:user,loading,errorMsg,getData} = useFetchUser<User>({url:'/api/user',data:{id:'1888'}});
+const {data:user,getData} = useFetchUser<User>({url:'/api/user',data:{id:'1888'}});
 onMounted(()=>{
     getData();
 })

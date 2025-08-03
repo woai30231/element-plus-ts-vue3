@@ -23,6 +23,10 @@ export default defineConfig({
       "/test":{
         target:"http://127.0.0.1:6753",
         changeOrigin:true
+      },
+      "/token":{
+        target:"http://127.0.0.1:6753",
+        changeOrigin:true
       }
     }
   }

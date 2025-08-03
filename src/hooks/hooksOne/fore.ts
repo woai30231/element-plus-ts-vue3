@@ -1,4 +1,4 @@
-import {ref,onMounted} from 'vue';
+import {ref} from 'vue';
 
 export function useCountdown(seconds:number){
     const count = ref(seconds);

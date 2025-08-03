@@ -14,7 +14,7 @@ export const useUserStore = defineStore('user',{
         error:null as string | null
     }),
     actions:{
-        async fetchUser(userId?:number){
+        async fetchUser(_userId?:number){
             this.loading = true;
             try{
                 const res = await request.get("/api/user");

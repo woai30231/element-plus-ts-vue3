@@ -6,7 +6,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import {defineProps,type PropType} from 'vue';
+import {defineProps} from 'vue';
 interface User{
     id:number
     name:string;

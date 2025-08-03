@@ -1,7 +1,7 @@
 <script setup lang="ts">
-function handleError ():never{
-    throw new Error("出错了");
-};
+// function handleError ():never{
+//     throw new Error("出错了");
+// };
 
 let data:any = "随便赋值";
 data = 123;

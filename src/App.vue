@@ -7,6 +7,7 @@
             </el-menu>
             <div class="_right">
                <el-button @click="themeStore.toggleTheme">切换主题</el-button>
+               <el-button v-show="1 || !showLoginBtn" @click="indexLoginPop.handle(true)">登录</el-button>
             </div>
          </div>
       </div>
@@ -14,11 +15,24 @@
       <router-view></router-view>
    </div>
    <el-backtop :right="100" :bottom="100" />
+   <LoginPop  v-if="indexLoginPop.showPop"/>
 </div>
 </template>
 <script setup lang="ts">
-import {ref,computed,watch} from 'vue';
+import {ref,watch,defineAsyncComponent,computed} from 'vue';
 import {useThemeStore} from '@/stores/one/themeStore';
+import { useIndexLogin } from './stores/pop/indexlogin';
+import { useToken } from './stores/useToken';
+const token = useToken();
+const showLoginBtn = computed(()=>{
+   token.getToken();
+   return !!token.token
+})
+const indexLoginPop = useIndexLogin();
+const LoginPop = defineAsyncComponent(()=>{
+   return import("@/components/LoginPop.vue")
+})
+
 const themeStore = useThemeStore();//获取主题
 const themeStyle = computed(()=>{
    return themeStore.darkMode?'dark':'light' 
@@ -64,8 +78,12 @@ const navList = ref<routeArrType[]>(rArr );
    background-color:#fff;
    padding-right:15px;
    ._right{
-      flex:120px;
+      flex:0 1 120px;
       text-align:right;
+      display:flex;
+      flex-direction:row;
+      justify-content:flex-end;
+      align-items:center;
    }
 }
 

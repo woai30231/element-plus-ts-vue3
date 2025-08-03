@@ -8,11 +8,11 @@
     </div>
 </template>
 <script setup lang="ts">
-import {ref,computed} from 'vue';
+import {computed} from 'vue';
 import {constantRoutes} from '@/router/router';
 const rItem = constantRoutes.filter(item=>item.name == 'tsdemo');
 const rArr = rItem[0]?.children || [];
-const lastArr = rArr.map((item,index)=>{
+const lastArr = rArr.map((item,_index)=>{
     let {path,name,meta} = item;
     // if(item.path.includes('TspracticeFore')){
     //     path = '/TspracticeFore/'+Math.floor(Math.random()*100000)

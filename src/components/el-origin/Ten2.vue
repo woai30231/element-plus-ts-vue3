@@ -97,7 +97,7 @@
         </div>
 </template>
 <script setup lang="ts">
-import {reactive,toRefs,ref,watch} from 'vue';
+import {ref,watch} from 'vue';
 const vlist = ref<number>(6);
 import {tableCol} from '@/common/el-origin/Ten2'
 const listLoad = ()=>{
@@ -119,9 +119,9 @@ const table = ref<Table[]>([
     {name:'小军',age:18,address:'城西'},
 ])
 
-const state = reactive({
-    testUrl:'/src/assets/2.jpeg'
-})
+// const state = reactive({
+//     testUrl:'/src/assets/2.jpeg'
+// })
 import imgUrl from '/2.jpeg';
 // const {testUrl} = toRefs(state)
 const testUrl = ref<string>(imgUrl);

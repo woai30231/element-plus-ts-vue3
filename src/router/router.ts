@@ -28,6 +28,14 @@ export const constantRoutes : AppRouteRecordRaw[] = [
                     title:'树形结构数据展示'
                 },
                 component:()=>import("@/components/js-section/tree-data-structure.vue")
+            },
+            {
+                path:'debounce-and-throttle',
+                name:'debounceandthrottle',
+                meta:{
+                    title:'防抖和节流'
+                },
+                component:()=>import("@/components/js-section/debounce-and-throttle.vue")
             }
         ]
     },

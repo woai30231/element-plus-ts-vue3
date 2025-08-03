@@ -8,7 +8,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import {ref ,onMounted} from 'vue';
+import {ref } from 'vue';
 import { useCountdown} from '@/hooks/hooksOne/fore';
 import {ElMessage} from 'element-plus';
 const seconds = ref(60);

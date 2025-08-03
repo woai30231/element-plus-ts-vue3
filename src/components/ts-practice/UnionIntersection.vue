@@ -23,7 +23,7 @@ const userProfile:UserProfile = {
     email:"alice@example.com",
     age:25
 }
-const getUserInfo = (id:UserId):UserProfile=>{
+const getUserInfo = (_id:UserId):UserProfile=>{
     return userProfile;
 }
 </script>

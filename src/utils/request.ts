@@ -2,6 +2,7 @@ import axios from 'axios';
 import type { InternalAxiosRequestConfig } from 'axios';
 import type {AxiosInstance,AxiosResponse} from 'axios';
 import {ElMessage} from 'element-plus';
+// import {}
 
 //创建axios实例
 const request:AxiosInstance = axios.create({
@@ -18,8 +19,9 @@ request.interceptors.request.use(
         //在发送请求之前做些什么
         console.log("发送请求：",config.url);
 
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem("localToken");
         if(token){
+            console.log("走到token请求头的逻辑了吗")
             config.headers.Authorization = `Bearer ${token}`;
         }
         return config;

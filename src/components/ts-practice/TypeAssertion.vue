@@ -12,8 +12,8 @@ type UserProfile = {
     age:number
 }
 const data :any = {name:'Alice',age:25};
-const processedData = (data as UserProfile);
-const test : typeof processedData = {name:'testname'} as UserProfile;
+// const processedData = (data as UserProfile);
+// const test : typeof processedData = {name:'testname'} as UserProfile;
 const processData = (data:any):UserProfile=>{
     return data as UserProfile;
 }

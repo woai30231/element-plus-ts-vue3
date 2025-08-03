@@ -7,7 +7,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import {useRoute} from 'vue-router';
+// import {useRoute} from 'vue-router';
 import {ref,onMounted} from 'vue';
 interface User {
     id:number

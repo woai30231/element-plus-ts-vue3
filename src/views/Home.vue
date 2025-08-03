@@ -79,7 +79,7 @@
   
   <script setup lang="ts">
   // 可自定义工作年限
-  const workYears = 3; // 这里替换成你的实际工作年限
+//   const workYears = 3; // 这里替换成你的实际工作年限
   </script>
   
   <style scoped lang="scss">

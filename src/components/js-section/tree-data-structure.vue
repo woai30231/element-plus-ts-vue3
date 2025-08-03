@@ -5,7 +5,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted ,onUnmounted} from 'vue';
 import Treechild from './tree-child.vue'
 import type { TreeDataType, Expanded, VisibleNodeType } from '@/types/common/treeData';
 
@@ -51,6 +51,8 @@ function getVisibleNodes(node: TreeDataType, depth = 0, parentExpanded = true): 
                 visible.push(...getVisibleNodes(child, depth + 1, true));
             }
         }
+        console.log('visible')
+        console.log(visible);
     }
     
     return visible;
@@ -72,7 +74,7 @@ function render() {
     const endIdx = Math.min(visibleCount, startIdx + Math.ceil(viewportHeight / itemHeight) + 2);
     
     tree.innerHTML = '';
-    tree.style.transform = `translateY(${startIdx * itemHeight}px)`;
+    // tree.style.transform = `translateY(${startIdx * itemHeight}px)`;
     
     // 渲染可视区域内的节点
     for (let i = startIdx; i < endIdx; i++) {
@@ -111,6 +113,17 @@ function render() {
     tree.style.height = `${visibleCount * itemHeight}px`;
 }
 
+const scrollHandle = ()=>{
+    const container = containerRef.value;
+    if(!container)return;
+    if (scrollAnimation) {
+        cancelAnimationFrame(scrollAnimation);
+    }
+    scrollAnimation = requestAnimationFrame(() => {
+        scrollTop = container.scrollTop;
+        render();
+    });
+}
 onMounted(() => {
     const container = containerRef.value;
     
@@ -119,20 +132,16 @@ onMounted(() => {
         render();
         
         // 滚动事件处理
-        container.addEventListener('scroll', () => {
-            // 使用requestAnimationFrame优化性能
-            if (scrollAnimation) {
-                cancelAnimationFrame(scrollAnimation);
-            }
-            scrollAnimation = requestAnimationFrame(() => {
-                scrollTop = container.scrollTop;
-                render();
-            });
-        });
+        container.addEventListener('scroll', scrollHandle);
     } else {
         console.error('容器元素未找到');
     }
 });
+onUnmounted(()=>{
+    if(containerRef.value){
+        containerRef.value.removeEventListener('scroll',scrollHandle)
+    }
+})
 </script>
 <style>
 .tree-container {

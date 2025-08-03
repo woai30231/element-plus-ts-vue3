@@ -6,7 +6,7 @@
                     <el-radio-button :label="'展开'" :value="false" />
                     <el-radio-button :label="'折叠'" :value="true" />
                 </el-radio-group>
-                <el-menu class="navMenu" :collapse="isCollapse" :mode="'vertical'" min-height="300px" :router="true">
+                <el-menu :default-active="$route.name" class="navMenu" :collapse="isCollapse" :mode="'vertical'" min-height="300px" :router="true">
                     <el-menu-item  v-for="lItem in navList" :key="lItem.name" :route="lItem" :index="lItem.name">
                         <el-icon><ArrowRight /></el-icon><span>{{lItem.text}}</span>
                     </el-menu-item>
@@ -32,6 +32,11 @@ const navList = ref<Nav[]>([
         path:'/jssection/tree-data-structure',
         name:'treeDataStructureShow',
         text:'树形结构大量数据展示'
+    },
+    {
+        path:'/jssection/debounce-and-throttle',
+        name:'debounceandthrottle',
+        text:'防抖和节流'
     }
 ])
 </script>
