@@ -1,5 +1,5 @@
 <template>
-    <el-dialog v-model="indexLoginPop.showPop"  @close="close" :title="'注册'">
+    <el-dialog v-model="indexLoginPop.showPop" width="480px"  @close="close" :title="'注册'">
         <div style="padding:10px 20px;">
             <el-form ref="formdataRef" :rules="rules" :model="formdata" width="200px" :label-width="'80px'" :size="'small'">
                 <!-- <el-form-item prop="email" label="'邮箱地址'">
@@ -21,7 +21,7 @@
 
             <div>
                 <el-button @click="close">取消</el-button>
-                <el-button  @click="signup" type="primary">注册</el-button>
+                <el-button  @click="signup" type="primary">登录</el-button>
             </div>
         </template>
     </el-dialog>

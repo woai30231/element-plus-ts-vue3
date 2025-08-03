@@ -1,0 +1,53 @@
+import {type RouteRecordRaw} from 'vue-router';
+const routes :RouteRecordRaw[] = [
+    {
+        path:'/jssection',
+        name:'jssection',
+        component:()=>import("@/views/JsSection.vue"),
+        meta:{title:'js篇'},
+        redirect:'/jssection/virtual-scroll-list',
+        children:[
+            {
+                path:'virtual-scroll-list',
+                name:'VirtualScrollList',
+                meta:{
+                    title:'虚拟滚动列表实现'
+                },
+                component:()=>import("@/components/js-section/virtual-scroll-list.vue")
+            },
+            {
+                path:'tree-data-structure',
+                name:'treeDataStructureShow',
+                meta:{
+                    title:'树形结构数据展示'
+                },
+                component:()=>import("@/components/js-section/tree-data-structure.vue")
+            },
+            {
+                path:'debounce-and-throttle',
+                name:'debounceandthrottle',
+                meta:{
+                    title:'防抖和节流'
+                },
+                component:()=>import("@/components/js-section/debounce-and-throttle.vue")
+            },
+            {
+                path:'iterator',
+                name:'iterator',
+                meta:{
+                    title:'防抖和节流'
+                },
+                component:()=>import("@/components/js-section/es6-iterator.vue")
+            },
+            {
+                path:'destructuring',
+                name:'destructuring',
+                meta:{
+                    title:'防抖和节流'
+                },
+                component:()=>import("@/components/js-section/es6-destructuring.vue")
+            }
+        ]
+    }
+]
+export default routes;

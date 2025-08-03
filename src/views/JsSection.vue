@@ -37,6 +37,16 @@ const navList = ref<Nav[]>([
         path:'/jssection/debounce-and-throttle',
         name:'debounceandthrottle',
         text:'防抖和节流'
+    },
+    {
+        path:'/jssection/iterator',
+        name:'iterator',
+        text:'es6可遍历对象'
+    },
+    {
+        path:'/jssection/destructuring',
+        name:'destructuring',
+        text:'es6解构介绍'
     }
 ])
 </script>

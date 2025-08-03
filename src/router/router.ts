@@ -7,43 +7,10 @@ export const constantRoutes : AppRouteRecordRaw[] = [
         meta:{title:'李建枫 - Welcome to you'}
     },
     {
-        path:'/jssection',
-        name:'jssection',
-        component:()=>import("@/views/JsSection.vue"),
-        meta:{title:'js篇'},
-        redirect:'/jssection/virtual-scroll-list',
-        children:[
-            {
-                path:'virtual-scroll-list',
-                name:'VirtualScrollList',
-                meta:{
-                    title:'虚拟滚动列表实现'
-                },
-                component:()=>import("@/components/js-section/virtual-scroll-list.vue")
-            },
-            {
-                path:'tree-data-structure',
-                name:'treeDataStructureShow',
-                meta:{
-                    title:'树形结构数据展示'
-                },
-                component:()=>import("@/components/js-section/tree-data-structure.vue")
-            },
-            {
-                path:'debounce-and-throttle',
-                name:'debounceandthrottle',
-                meta:{
-                    title:'防抖和节流'
-                },
-                component:()=>import("@/components/js-section/debounce-and-throttle.vue")
-            }
-        ]
-    },
-    {
         path:'/element-plus',
         name:'element-plus',
         component:()=>import("@/views/Elementplus.vue"),
-        meta:{title:'element-plus笔记'},
+        meta:{title:'element-plus篇'},
         children:[
             {
                 path:'formdemo',
@@ -93,20 +60,20 @@ export const constantRoutes : AppRouteRecordRaw[] = [
         path:'/HooksDemo',
         name:'HooksDemo',
         component:()=>import("@/views/HooksDemo.vue"),
-        meta:{title:'vue hooks'}
+        meta:{title:'vue hooks篇'}
     },
     {
         path:'/PiniaDemo',
         name:'PiniaDemo',
         component:()=>import("@/views/PiniaDemo.vue"),
-        meta:{title:'Pinia 演示'}
+        meta:{title:'Pinia篇'}
     },
     {
         path:'/tsdemo',
         name:'tsdemo',
         component:()=>import('@/views/tspractice/Index.vue'),
         redirect:'/tsdemo/TspracticeOne',
-        meta:{title:'tsdemo'},
+        meta:{title:'ts篇'},
         children:[
             {
                 path:'TspracticeOne',

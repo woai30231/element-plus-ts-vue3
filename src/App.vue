@@ -7,7 +7,8 @@
             </el-menu>
             <div class="_right">
                <el-button @click="themeStore.toggleTheme">切换主题</el-button>
-               <el-button v-show="1 || !showLoginBtn" @click="indexLoginPop.handle(true)">登录</el-button>
+               <el-button v-show="!hasLogin" @click="indexLoginPop.handle(true)">登录</el-button>
+               <el-button v-show="hasLogin" @click="token.setToken()">退出</el-button>
             </div>
          </div>
       </div>
@@ -24,9 +25,10 @@ import {useThemeStore} from '@/stores/one/themeStore';
 import { useIndexLogin } from './stores/pop/indexlogin';
 import { useToken } from './stores/useToken';
 const token = useToken();
-const showLoginBtn = computed(()=>{
+const hasLogin = computed(()=>{
    token.getToken();
-   return !!token.token
+   const _t = token.token;
+   return !!_t;
 })
 const indexLoginPop = useIndexLogin();
 const LoginPop = defineAsyncComponent(()=>{
@@ -52,6 +54,11 @@ const rArr = constantRoutes.map((item)=>{
    return {name,path,text:meta?.title};
 }) as routeArrType[];
 console.log(rArr);
+rArr.splice(1,0,{
+   path:'/jssection',
+   name:'jssection',
+   text:'js篇'
+})
 
 interface routeArrType {
    name:string;

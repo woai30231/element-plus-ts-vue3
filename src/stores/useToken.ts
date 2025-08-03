@@ -8,7 +8,12 @@ export const useToken = defineStore('token',()=>{
             token.value = localtoken;
         }
     }
-    const setToken = (_token:string)=>{
+    const setToken = (_token?:string|undefined)=>{
+        if(!_token){
+            localStorage.removeItem('localToken')
+            token.value = '';
+            return;
+        }
         token.value = _token;
         localStorage.setItem('localToken',JSON.stringify(_token));
     }

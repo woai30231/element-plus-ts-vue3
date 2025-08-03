@@ -1,8 +1,12 @@
 import {createRouter,createWebHistory} from 'vue-router';
-import {constantRoutes} from './router';
+import {constantRoutes as commonRoutes} from './router';
+import Jsroutes from './jssection';
 const router = createRouter({
     history:createWebHistory(),
-    routes:constantRoutes
+    routes:[
+        ...commonRoutes,
+        ...Jsroutes
+    ]
 })
 router.beforeEach((to,from,next)=>{
     console.log(from.path);

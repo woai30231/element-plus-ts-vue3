@@ -6,9 +6,12 @@
       <!-- 主体内容 -->
       <div class="main-content">
         <!-- 标题区 -->
-        <div class="title-section">
-          <h1>👋 你好，欢迎来到这里</h1>
-          <p class="subtitle">在Web的世界里摸爬滚打的小强</p>
+        <div class="top-avatar">
+            <el-avatar :size="avatarsize" :src="avatarsrc"></el-avatar>
+            <div class="title-section">
+                <h1>👋 你好，欢迎来到这里</h1>
+                <p class="subtitle">在Web的世界里</p>
+            </div>
         </div>
         
         <!-- 关于我 -->
@@ -78,11 +81,23 @@
   </template>
   
   <script setup lang="ts">
+  import { useAvatar } from '@/hooks/useAvatar';
+  import avatarUrl from '@/assets/hb.png';
+  const {size:avatarsize,src:avatarsrc} = useAvatar({
+    src:avatarUrl,
+    size:150
+  });
+
   // 可自定义工作年限
 //   const workYears = 3; // 这里替换成你的实际工作年限
   </script>
   
   <style scoped lang="scss">
+  .top-avatar{
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly;
+  }
   .intro-con {
     max-width: 1100px;
     margin: 0 auto;
