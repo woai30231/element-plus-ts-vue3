@@ -47,6 +47,11 @@ const navList = ref<Nav[]>([
         path:'/jssection/destructuring',
         name:'destructuring',
         text:'es6解构介绍'
+    },
+    {
+        path:'/jssection/jsonwebtoken',
+        name:'jsonwebtoken',
+        text:'jwt验证权限流程'
     }
 ])
 </script>

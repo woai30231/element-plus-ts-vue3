@@ -46,6 +46,14 @@ const routes :RouteRecordRaw[] = [
                     title:'防抖和节流'
                 },
                 component:()=>import("@/components/js-section/es6-destructuring.vue")
+            },
+            {
+                path:'jsonwebtoken',
+                name:'jsonwebtoken',
+                meta:{
+                    title:'jwt验证权限流程'
+                },
+                component:()=>import("@/components/js-section/es6-jwt.vue")
             }
         ]
     }
