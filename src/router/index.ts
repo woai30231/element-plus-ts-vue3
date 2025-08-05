@@ -1,11 +1,18 @@
 import {createRouter,createWebHistory} from 'vue-router';
 import {constantRoutes as commonRoutes} from './router';
 import Jsroutes from './jssection';
+import vueuse from './vueuse'
 const router = createRouter({
     history:createWebHistory(),
     routes:[
         ...commonRoutes,
-        ...Jsroutes
+        ...Jsroutes,
+        ...vueuse,
+        {
+            path:'/:pathMatch(.*)*',
+            name:'notfound',
+            component:()=>import("@/views/Notfund.vue")
+        }
     ]
 })
 router.beforeEach((to,from,next)=>{
