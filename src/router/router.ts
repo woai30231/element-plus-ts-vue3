@@ -7,6 +7,12 @@ export const constantRoutes : AppRouteRecordRaw[] = [
         meta:{title:'李建枫 - Welcome to you'}
     },
     {
+        path:'/uploadtest',
+        name:'uploadtest',
+        component:()=>import("@/components/element-plus/AllElCompnentTest.vue"),
+        meta:{title:'测试上传图片文件，不对外开放'}
+    },
+    {
         path:'/element-plus',
         name:'element-plus',
         component:()=>import("@/views/Elementplus.vue"),

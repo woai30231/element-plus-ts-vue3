@@ -27,7 +27,7 @@ interface ApiRes<T>{
 const uploadFileApi = {
     //上传文件
     uploadFile : (data:any)=>{
-        return request.post<ApiRes<rData>>('/api/upload',data,{
+        return request.post<ApiRes<rData>>('/api/upload/secure',data,{
             "headers":{
                 'Content-Type': 'multipart/form-data'
             }
