@@ -79,25 +79,25 @@ export const constantRoutes : AppRouteRecordRaw[] = [
                 path:'TspracticeOne',
                 name:'TspracticeOne',
                 component:()=>import("@/views/tspractice/TspracticeOne.vue"),
-                meta:{title:'ts演示'}
+                meta:{title:'ts基础类型'}
             },
             {
                 path:'TspracticeTwo',
                 name:'TspracticeTwo',
                 component:()=>import("@/views/tspractice/TspracticeTwo.vue"),
-                meta:{title:'ts演示2'}
+                meta:{title:'ts测试api'}
             },
             {
                 path:'TspracticeThree',
                 name:'TspracticeThree',
                 component:()=>import("@/views/tspractice/TspracticeThree.vue"),
-                meta:{title:'ts实战演示3'}
+                meta:{title:'ts组件化'}
             },
             {
                 path:'TspracticeFore',
                 name:'TspracticeFore',
                 component:()=>import("@/views/tspractice/TspracticeFore.vue"),
-                meta:{title:'ts实战演示4'}
+                meta:{title:'ts表单'}
             }
         ]
     },

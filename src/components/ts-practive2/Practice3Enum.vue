@@ -20,7 +20,7 @@ const selectRole = ():void=>{
 </script>
 <template>
 <el-card>
-    <h3>练习3：枚举类型</h3>
+    <h3>枚举类型</h3>
     <p @click="selectRole">用户角色：{{userRole === Role.Admin?"管理员":userRole === Role.Editor ? "编辑员":"访客"}}</p>
 
 </el-card>

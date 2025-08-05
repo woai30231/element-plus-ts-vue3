@@ -12,7 +12,7 @@ if(typeof value === "string"){
 </script>
 <template>
     <el-card>
-        <h3>练习 4：联合类型、never、unknown</h3>
+        <h3>联合类型、never、unknown</h3>
         <p>any 类型值：{{data}}</p>
         <p>unknown 类型处理：已检查类型</p>
     </el-card>

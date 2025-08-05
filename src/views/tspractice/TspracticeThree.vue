@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>ts 组件化项目演示</h1>
+    <h1>ts 组件化</h1>
     <el-card>
         <RegisterForm ref="childForm" />
         <el-button @click="handleClick">点击</el-button>

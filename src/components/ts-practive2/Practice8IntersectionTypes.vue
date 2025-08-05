@@ -13,7 +13,7 @@ const item : RecordItem = {
 </script>
 <template>
     <el-card>
-        <h3>练习8：交叉类型</h3>
+        <h3>交叉类型</h3>
         <p>ID:{{item.id}}</p>
         <p>创建时间：{{
             item.createAt.toLocaleString()}}</p>

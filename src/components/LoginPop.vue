@@ -12,7 +12,7 @@
                     <el-input type="password" v-model="formdata.password" />
                 </el-form-item>
                 <el-form-item label="">
-                    <el-text size="small" style="color:#aaa;">登录账号：user,密码：123456</el-text>
+                    <el-text size="small" style="color:#aaa;">测试登录账号：user,密码：user123</el-text>
                 </el-form-item>
             </el-form>
             

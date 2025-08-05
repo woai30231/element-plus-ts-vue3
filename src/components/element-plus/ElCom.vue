@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h3>该页面展示所有element-plus组件使用记录，<strong>注：全部无数据逻辑</strong></h3>
         
         <el-row>
             <el-button  >按钮</el-button>

@@ -15,7 +15,7 @@ const product:Product = {
 </script>
 <template>
     <el-card>
-        <h3>练习7：类型别名</h3>
+        <h3>类型别名</h3>
         <p>产品ID:{{product.id}}</p>
         <p>产品名称：{{product.name}}</p>
         <p>价格：{{product.price}}</p>

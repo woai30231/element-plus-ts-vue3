@@ -1,14 +1,10 @@
 <template>
-   <div :class="themeStyle">
+   <div>
       <div class="mainTop">
          <div class="topHeader">
-            <el-menu  style="flex:1 1 100%;border-bottom:0px;" mode="horizontal">
-               <el-menu-item v-for="(item,index) in navList" :index="''+index"><router-link :to="{path:item.path}">{{item.text}}</router-link></el-menu-item>
-            </el-menu>
+            <Nav />
             <div class="_right">
-               <el-button @click="themeStore.toggleTheme">切换主题</el-button>
-               <el-button v-show="!hasLogin" @click="indexLoginPop.handle(true)">登录</el-button>
-               <el-button v-show="hasLogin" @click="token.setToken()">退出</el-button>
+               <TopRightOperate />
             </div>
          </div>
       </div>
@@ -20,52 +16,15 @@
 </div>
 </template>
 <script setup lang="ts">
-import {ref,watch,defineAsyncComponent,computed} from 'vue';
-import {useThemeStore} from '@/stores/one/themeStore';
+import {defineAsyncComponent} from 'vue';
+import TopRightOperate from '@/components/Topnav/TopRightOperate.vue';
+import Nav from '@/components/Topnav/Nav.vue';
 import { useIndexLogin } from './stores/pop/indexlogin';
-import { useToken } from './stores/useToken';
-const token = useToken();
-const hasLogin = computed(()=>{
-   token.getToken();
-   const _t = token.token;
-   return !!_t;
-})
 const indexLoginPop = useIndexLogin();
 const LoginPop = defineAsyncComponent(()=>{
    return import("@/components/LoginPop.vue")
 })
 
-const themeStore = useThemeStore();//获取主题
-const themeStyle = computed(()=>{
-   return themeStore.darkMode?'dark':'light' 
-})
-watch(()=>{
-   return themeStore.darkMode
-},(newValue)=>{
-   if(newValue){
-      document.body.classList.add('dark')
-   }else{
-      document.body.classList.remove('dark');
-   }
-},{immediate:true})
-import {constantRoutes} from '@/router/router';
-const rArr = constantRoutes.map((item)=>{
-   const {path,name,meta} = item;
-   return {name,path,text:meta?.title};
-}) as routeArrType[];
-console.log(rArr);
-rArr.splice(1,0,{
-   path:'/jssection',
-   name:'jssection',
-   text:'js篇'
-})
-
-interface routeArrType {
-   name:string;
-   path:string;
-   text:string
-}
-const navList = ref<routeArrType[]>(rArr );
 
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="padding:20px 40px;">
         <h2>vue hooks使用</h2>
 
         <el-card>

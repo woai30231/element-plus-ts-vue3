@@ -9,7 +9,9 @@
         <el-form-item label="密码">
             <el-input type="password" v-model="form.password"/>
         </el-form-item>
-        <el-button @click="submitForm">提交</el-button>
+        <el-form-item>
+            <el-button @click="submitForm">提交</el-button>
+        </el-form-item>
     </el-form>
     
 </template>

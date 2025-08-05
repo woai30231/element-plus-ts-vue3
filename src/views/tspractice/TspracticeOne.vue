@@ -1,5 +1,5 @@
 <template>
-    <div><el-row><h4>ts演示</h4></el-row></div>
+    <div><el-row><h4>ts基础类型</h4></el-row></div>
 
     <BasicTypes />
 

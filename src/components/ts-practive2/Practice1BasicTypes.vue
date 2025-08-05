@@ -1,6 +1,6 @@
 <template>
     <el-card>
-        <h3>练习1：基础类型</h3>
+        <h3>基础类型</h3>
         <p>姓名：{{name}}</p>
         <p>年龄：{{age}}</p>
         <p>是否学生：{{isStudent?"是":"否"}}</p>

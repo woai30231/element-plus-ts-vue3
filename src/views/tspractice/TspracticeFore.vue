@@ -1,7 +1,7 @@
 <template>
 
     <div> 
-        <h2>TS演示</h2>
+        <h2>TS表单</h2>
 
         <el-card>
             <practice1 />
