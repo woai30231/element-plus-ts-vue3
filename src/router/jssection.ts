@@ -8,6 +8,29 @@ const routes :RouteRecordRaw[] = [
         redirect:'/jssection/virtual-scroll-list',
         children:[
             {
+                path:'router-switch-transition',
+                name:'router-switch-transition',
+                redirect:{
+                    name:'router-switch1'
+                },
+                component:()=>import("@/components/js-section/router-switch-transition.vue"),
+                meta:{
+                    title:''
+                },
+                children:[
+                    {
+                        path:'router-switch1',
+                        name:'router-switch1',
+                        component:()=>import("@/components/js-section/router-switch1.vue")
+                    },
+                    {
+                        path:'router-switch2',
+                        name:'router-switch2',
+                        component:()=>import("@/components/js-section/router-switch2.vue")
+                    }
+                ]
+            },
+            {
                 path:'virtual-scroll-list',
                 name:'VirtualScrollList',
                 meta:{

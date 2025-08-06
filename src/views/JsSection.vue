@@ -52,6 +52,11 @@ const navList = ref<Nav[]>([
         path:'/jssection/jsonwebtoken',
         name:'jsonwebtoken',
         text:'jwt验证权限流程'
+    },
+    {
+        path:'/jssection/router-switch-transition',
+        name:"router-switch-transition",
+        text:"vue路由切换过渡动画效果"
     }
 ])
 </script>
