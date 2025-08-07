@@ -1,13 +1,16 @@
 <template>
-    <el-button @click="themeStore.toggleTheme">切换主题</el-button>
-    <el-button v-show="!hasLogin" @click="indexLoginPop.handle(true)">登录</el-button>
-    <el-button v-show="hasLogin" @click="token.setToken()">退出</el-button>
+    <el-button icon="Switch" @click="switchLanguage">{{$t('language')}}</el-button>
+    <el-button @click="themeStore.toggleTheme">{{$t('userTheme')}}</el-button>
+    <el-button v-show="!hasLogin" @click="indexLoginPop.handle(true)">{{$t('logIn')}}</el-button>
+    <el-button v-show="hasLogin" @click="token.setToken()">{{$t('logOut')}}</el-button>
 </template>
 <script setup lang="ts">
 import {computed,watch} from 'vue'
 import {useThemeStore} from '@/stores/one/themeStore';
 import { useIndexLogin } from '@/stores/pop/indexlogin';
 import { useToken } from '@/stores/useToken';
+import useLocale from '@/hooks/useLocale';
+const {switchLanguage} = useLocale();
 const token = useToken();
 const indexLoginPop = useIndexLogin();
 const hasLogin = computed(()=>{

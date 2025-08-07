@@ -4,8 +4,13 @@
     </el-menu>
 </template>
 <script setup lang="ts">
-import {ref} from 'vue';
+import {ref,watch} from 'vue';
+import {useI18n} from 'vue-i18n';
 // import {useRoute} from 'vue-router';
+const {t,locale} = useI18n();
+watch(locale,()=>{
+   navList.value[0].text = t('nav.indextitle');
+})
 interface routeArrType {
    name:string;
    path:string;
@@ -15,7 +20,7 @@ const navList = ref<routeArrType[]>([
    {
       path:'/',
       name:'Home',
-      text:'首页'
+      text:t('nav.indextitle')
    },
    {
       path:'/jssection',
