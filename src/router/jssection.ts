@@ -31,6 +31,11 @@ const routes :RouteRecordRaw[] = [
                 ]
             },
             {
+                path:'ref-and-reactive',
+                name:'ref-and-reactive',
+                component:()=>import("@/components/js-section/ref-and-reactive.vue") 
+            },
+            {
                 path:'virtual-scroll-list',
                 name:'VirtualScrollList',
                 meta:{

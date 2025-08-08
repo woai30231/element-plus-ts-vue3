@@ -57,6 +57,11 @@ const navList = ref<Nav[]>([
         path:'/jssection/router-switch-transition',
         name:"router-switch-transition",
         text:"vue路由切换过渡动画效果"
+    },
+    {
+        path:'/jssection/ref-and-reactive',
+        name:"ref-and-reactive",
+        text:"es6的proxy认识"
     }
 ])
 </script>
