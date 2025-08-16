@@ -7,12 +7,12 @@
 import {ref} from 'vue'
 import { onStartTyping } from '@vueuse/core';
 import { useTemplateRef } from 'vue';
-const input1 = useTemplateRef('input1');
+const input1 = useTemplateRef<HTMLInputElement>('input1');
 const iValue = ref('')
 onStartTyping(()=>{
     console.log("键盘输入了？")
-    if(!input1.value.active){
-        input1.value.focus();
+    if(document.activeElement !== input1.value){
+        input1.value!.focus();
     }
 })
 </script>

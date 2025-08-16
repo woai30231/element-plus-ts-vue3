@@ -13,9 +13,9 @@
 <script setup lang="ts">
 import {onLongPress} from '@vueuse/core';
 import {useTemplateRef,ref} from 'vue';
-const b500= useTemplateRef('b500');
-const b2000= useTemplateRef('b2000');
-const b2000C= useTemplateRef('b2000C');
+const b500= useTemplateRef<HTMLElement>('b500');
+const b2000= useTemplateRef<HTMLElement>('b2000');
+const b2000C= useTemplateRef<HTMLElement>('b2000C');
 const press500 = ref(false);
 const press2000 = ref(false);
 const press2000Click = ref(false);

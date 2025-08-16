@@ -12,6 +12,7 @@ export default defineConfig({
       "@":resolve(__dirname,'./src')
     },
   },
+  base:'vue-app',
   server:{
     port:5166,
     proxy:{
