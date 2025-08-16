@@ -3,7 +3,7 @@ import {constantRoutes as commonRoutes} from './router';
 import Jsroutes from './jssection';
 import vueuse from './vueuse'
 const router = createRouter({
-    history:createWebHistory(),
+    history:createWebHistory(import.meta.env.VITE_BASE_PATH),
     routes:[
         ...commonRoutes,
         ...Jsroutes,
