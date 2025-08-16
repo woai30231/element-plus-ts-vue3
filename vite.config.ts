@@ -3,14 +3,27 @@ import vue from '@vitejs/plugin-vue'
 // import {fileURLToPath,URL} from 'url'
 import {resolve} from 'path';
 const env = loadEnv('',process.cwd());
+import fs from 'fs';
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    {
+      name: 'force-clean',
+      buildStart() {
+        if (fs.existsSync('./dist')) fs.rmSync('./dist', { recursive: true })
+      }
+    }
+  ],
   resolve:{
     alias:{
       // "@":fileURLToPath(new URL('./src',import.meta.url))
       "@":resolve(__dirname,'./src')
     },
+  },
+  build:{
+    outDir:resolve(process.cwd(),'dist/vue-app'),
+    emptyOutDir:true
   },
   base:env.VITE_BASE_PATH,
   server:{
