@@ -1,37 +1,18 @@
 <script setup lang="ts">
-import { reactify, useMousePressed, useToggle } from '@vueuse/core'
-import { computed, reactive, useTemplateRef } from 'vue'
-import YAML from 'yaml'
+import { useRafFn } from '@vueuse/core'
+import { shallowRef } from 'vue'
 
-const stringify = reactify(
-  (input: any) => YAML.stringify(input, (_k, v) => {
-    if (typeof v === 'function') {
-      return undefined
-    }
-    return v
-  }, {
-    singleQuote: true,
-    flowCollectionPadding: false,
-  }),
-)
+const count = shallowRef(0)
 
-const el = useTemplateRef<HTMLElement>('el')
-const [withTarget, toggle] = useToggle()
-const target = computed<HTMLElement | null>(() =>
-  (withTarget.value ? el.value : window) as HTMLElement)
-
-const mouse = reactive(useMousePressed({ target }))
-const text = stringify(mouse)
+const { pause, resume } = useRafFn(() => {
+  count.value++
+  console.log(count.value)
+})
 </script>
-
 <template>
-  <div ref="el" class="select-none">
-    <pre lang="yaml">{{ text }}</pre>
-    <div>
-      Tracking on
-      <button class="ml-2 button small" @click="toggle()">
-        {{ withTarget ? 'Demo section' : 'Entire page' }}
-      </button>
-    </div>
-  </div>
+  <p>
+    {{count}}
+  </p>
+  <el-button @click="pause">pause</el-button>
+  <el-button @click="resume">resume</el-button>
 </template>
