@@ -22,13 +22,5 @@ const themeStore = useThemeStore();//获取主题
 // const themeStyle = computed(()=>{
 //    return themeStore.darkMode?'dark':'light' 
 // })
-watch(()=>{
-   return themeStore.darkMode
-},(newValue)=>{
-   if(newValue){
-      document.body.classList.add('dark')
-   }else{
-      document.body.classList.remove('dark');
-   }
-},{immediate:true})
+
 </script>

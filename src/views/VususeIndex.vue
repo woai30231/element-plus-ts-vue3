@@ -20,8 +20,8 @@
     </div>
 </template>
 <script setup lang="ts">
-// import {ref} from 'vue';
-import {toRefs,reactive} from 'vue';
+import {ref} from 'vue';
+import {toRefs,reactive,onErrorCaptured} from 'vue';
 import C001 from '@/components/vueuse/c001.vue';
 import C002 from '@/components/vueuse/c002.vue';
 import C003 from '@/components/vueuse/c003.vue';
@@ -39,6 +39,25 @@ const changeMsg = ()=>{
     userMsg.name = '小红';
     userMsg.age = 99
 }
+
+const errorMessage = ref('');
+// 注册错误捕获钩子
+onErrorCaptured((error, instance, info) => {
+  // error：捕获到的错误对象（Error实例）
+  // instance：出错的组件实例（可能是子组件）
+  // info：错误信息字符串（如"render"表示渲染错误，"setup"表示setup阶段错误）
+
+  // 1. 自定义错误处理（如显示提示、记录日志）
+  errorMessage.value = `捕获到错误：${error.message}`;
+  console.log('错误详情：', error);
+  console.log('出错组件：', instance);
+  console.log('错误场景：', info);
+
+  // 2. 返回值决定是否阻止错误继续向上传播
+  // true：阻止传播（父组件和全局错误处理器不会收到这个错误）
+  // false：不阻止（错误会继续冒泡）
+  return true;
+});
 
 </script>
 <style scoped>
